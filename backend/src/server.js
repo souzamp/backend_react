@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require("mongoose");
+const path = require("path");
 
 /* 
 https://cloud.mongodb.com/v2/5caf47c8c56c984159b75e21#clusters
@@ -31,6 +32,7 @@ mongoose.connect(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 
 app.use(require("./routes"));
 
