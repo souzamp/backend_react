@@ -21,27 +21,27 @@ io.on('connection', socket =>{
   });
 });
 
-//  mongoose.connect(
-//      'mongodb+srv://oministack:oministack@cluster0-92qbl.mongodb.net/oministack?retryWrites=true', 
-//      {
-//      useNewUrlParser: true
-//       }
-//  );
-
  mongoose.connect(
-     'mongodb://localhost:27017/omnistack?retryWrites=true&authSource=admin', 
+     'mongodb+srv://oministack:oministack@cluster0-92qbl.mongodb.net/oministack?retryWrites=true', 
      {
-       useNewUrlParser: true,
-       auth: {
-         password: 'omnistack',
-         user: 'omnistack'
-       }
-     },
-     err => {
-       if (err) console.log(err);
-       else console.log('conectado ao mongodb.');
-     }
+     useNewUrlParser: true
+      }
  );
+
+//  mongoose.connect(
+//      'mongodb://localhost:27017/omnistack?retryWrites=true&authSource=admin', 
+//      {
+//        useNewUrlParser: true,
+//        auth: {
+//          password: 'omnistack',
+//          user: 'omnistack'
+//        }
+//      },
+//      err => {
+//        if (err) console.log(err);
+//        else console.log('conectado ao mongodb.');
+//      }
+//  );
 
 app.use((req, res, next) => {
   req.io = io;
