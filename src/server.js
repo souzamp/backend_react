@@ -22,7 +22,7 @@ io.on('connection', socket => {
 });
 
 mongoose.connect(
-  "mongodb+srv://marcos:marcos@cluster0-92qbl.mongodb.net/test?retryWrites=true&w=majority",
+  "mongodb+srv://marcos:marcos@cluster0-92qbl.mongodb.net/marcos?retryWrites=true&w=majority",
   {
     useNewUrlParser: true
   }
