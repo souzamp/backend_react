@@ -14,19 +14,19 @@ app.use(cors());
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-io.on('connection', socket =>{
+io.on('connection', socket => {
   //console.log("ok");
   socket.on('connectRoom', box => {
     socket.join(box);
   });
 });
 
- mongoose.connect(
-     'mongodb+srv://oministack:oministack@cluster0-92qbl.mongodb.net/oministack?retryWrites=true', 
-     {
-     useNewUrlParser: true
-      }
- );
+mongoose.connect(
+  "mongodb+srv://marcos:marcos@cluster0-92qbl.mongodb.net/test?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true
+  }
+);
 
 //  mongoose.connect(
 //      'mongodb://localhost:27017/omnistack?retryWrites=true&authSource=admin', 
